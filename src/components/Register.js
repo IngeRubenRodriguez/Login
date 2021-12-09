@@ -26,20 +26,20 @@ const Register = () => {
     username: Yup.string()
       .test(
         "len",
-        "The username must be between 3 and 20 characters.",
+        "The nombre de usuario debe tener entre 3 y 20 caracteres.",
         (val) =>
           val &&
           val.toString().length >= 3 &&
           val.toString().length <= 20
       )
-      .required("This field is required!"),
+      .required("¡Este campo es requerido!"),
     email: Yup.string()
-      .email("This is not a valid email.")
-      .required("This field is required!"),
+      .email("¡Este no es un e-mail valido!")
+      .required("¡Este campo es requerido!"),
     password: Yup.string()
       .test(
         "len",
-        "The password must be between 6 and 40 characters.",
+        "la contraseña debe tener entre 6 y 40 caracteres.",
         (val) =>
           val &&
           val.toString().length >= 6 &&
@@ -80,7 +80,7 @@ const Register = () => {
             {!successful && (
               <div>
                 <div className="form-group">
-                  <label htmlFor="username">Username</label>
+                  <label htmlFor="username">Usuario</label>
                   <Field name="username" type="text" className="form-control" />
                   <ErrorMessage
                     name="username"
@@ -100,7 +100,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="password">Contraseña</label>
                   <Field
                     name="password"
                     type="password"
@@ -114,7 +114,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group">
-                  <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+                  <button type="submit" className="btn btn-primary btn-block">Registrarse</button>
                 </div>
               </div>
             )}
